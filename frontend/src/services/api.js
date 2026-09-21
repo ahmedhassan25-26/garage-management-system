@@ -3,8 +3,7 @@ import axios from "axios";
 const api = axios.create({
   // Use the same-origin API in production. Vite proxies this path during local
   // development, while VITE_API_URL supports a separately hosted API.
-  baseURL: import.meta.env.VITE_API_URL || "/api",
-  headers: {
+baseURL: `${import.meta.env.VITE_API_URL || ""}/api`  headers: {
     "Content-Type": "application/json",
   },
 });
