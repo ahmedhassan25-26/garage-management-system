@@ -1,0 +1,23 @@
+.app-error {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  padding: 24px;
+  text-align: center;
+  color: var(--danger);
+}
+
+.app-error h1 { margin: 16px 0 6px; }
+.app-error p { max-width: 440px; margin-bottom: 20px; }
+.app-error button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: #fff;
+  padding: 11px 15px;
+  font-weight: 700;
+}

@@ -1,0 +1,156 @@
+/* =========================================================
+   INVOICES PAGE — page-specific additions
+   (shared styles come from App.css design system)
+   ========================================================= */
+
+/* Icon buttons inside the table rows */
+.invoices-page .action-buttons .icon-button:hover {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+  color: var(--primary);
+}
+
+/* ---------- Invoice modal ------------------------------- */
+.modal.invoice-modal {
+  width: 900px;
+  max-width: 95%;
+  max-height: calc(100vh - 60px);
+  overflow: auto;
+}
+
+.invoice-modal-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.invoice-brand {
+  margin-bottom: 6px;
+}
+
+.invoice-brand .brand {
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.3px;
+}
+
+.invoice-meta {
+  display: flex;
+  gap: 28px;
+  margin-top: 14px;
+}
+
+.invoice-meta > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.invoice-meta strong {
+  color: var(--text-primary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.invoice-meta .muted {
+  color: var(--text-secondary);
+}
+
+.invoice-lines {
+  width: 100%;
+  margin-top: 16px;
+  border-collapse: collapse;
+}
+
+.invoice-lines th,
+.invoice-lines td {
+  padding: 9px 6px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.invoice-lines th {
+  color: var(--text-secondary);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.invoice-lines .right,
+.invoice-totals .right {
+  text-align: right;
+}
+
+.invoice-totals {
+  max-width: 320px;
+  margin: 14px 0 0 auto;
+}
+
+.invoice-totals-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.invoice-totals-line.total {
+  margin-top: 6px;
+  padding-top: 9px;
+  border-top: 2px solid var(--primary);
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.invoice-payment-status {
+  margin-top: 14px;
+  padding: 9px 12px;
+  border-radius: var(--radius-md);
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.invoice-payment-status strong {
+  color: var(--text-primary);
+}
+
+@media (max-width: 600px) {
+  .modal.invoice-modal {
+    width: 100%;
+    max-width: 100%;
+    max-height: 94vh;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .modal-overlay {
+    align-items: flex-end;
+  }
+
+  .invoice-meta {
+    flex-direction: column;
+    gap: 12px !important;
+  }
+
+  .invoice-totals {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .invoice-modal-actions {
+    flex-wrap: wrap;
+  }
+
+  .invoice-lines th,
+  .invoice-lines td {
+    padding: 8px 4px;
+  }
+}

@@ -1,0 +1,14 @@
+/* =========================================================
+   VEHICLES PAGE — page-specific additions
+   (shared styles come from App.css design system)
+   ========================================================= */
+
+.vehicle-customer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}

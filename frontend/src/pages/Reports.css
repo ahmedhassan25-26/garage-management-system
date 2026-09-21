@@ -1,0 +1,188 @@
+/* =========================================================
+   REPORTS PAGE — page-specific additions
+   (shared styles come from App.css design system)
+   ========================================================= */
+
+/* Filter + pagination toolbar cards */
+.report-filter-card,
+.report-pagination-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 10px;
+  padding: 14px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.report-date-field {
+  display: grid;
+  gap: 5px;
+}
+
+.report-date-field label,
+.pagination-group > label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.report-date-field input,
+.pagination-group select {
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #dbe2ea;
+  border-radius: var(--radius-md);
+  background: #fff;
+  color: var(--text-primary);
+}
+
+.pagination-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pagination-group span {
+  color: var(--text-secondary);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.pagination-group button {
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid #dbe2ea;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.pagination-group button:hover {
+  background: #f8fafc;
+}
+
+/* Report section cards */
+.report-card {
+  background: var(--surface);
+  border: 1px solid #e8edf3;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.report-card h2 {
+  margin: 0 0 12px;
+  color: var(--text-primary);
+  font-size: 17px;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 20px;
+  align-items: center;
+}
+
+.report-grid > div:nth-child(odd) {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.report-value {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.report-value.good { color: #16a34a; }
+.report-value.danger { color: #dc2626; }
+.report-value.warning { color: #d97706; }
+
+.report-section-title {
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 14px 0 8px !important;
+}
+
+/* Plain lists (most serviced vehicles, top parts) */
+.list-plain {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.list-plain li {
+  padding: 5px 0;
+  border-bottom: 1px dashed #edf1f5;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.list-plain li:last-child {
+  border-bottom: 0;
+}
+
+.list-plain li strong {
+  color: var(--text-primary);
+}
+
+/* Mechanic row inside the mechanics table */
+.report-mechanic {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 700px) {
+  .report-filter-card,
+  .report-pagination-card {
+    align-items: stretch;
+  }
+  .report-date-field {
+    flex: 1 1 140px;
+  }
+  .report-filter-card .primary-button,
+  .report-filter-card .secondary-button {
+    flex: 1 1 calc(50% - 6px);
+  }
+  .report-grid {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .report-card {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .report-filter-card .primary-button,
+  .report-filter-card .secondary-button {
+    flex-basis: 100%;
+  }
+
+  .report-date-field input,
+  .pagination-group select {
+    font-size: 16px;
+  }
+
+  .pagination-group {
+    flex-wrap: wrap;
+  }
+
+  .pagination-group button {
+    flex: 1 1 auto;
+    min-height: 40px;
+  }
+
+  .report-card {
+    padding: 14px;
+  }
+}

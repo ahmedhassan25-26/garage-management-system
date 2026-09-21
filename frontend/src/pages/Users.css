@@ -1,0 +1,45 @@
+/* =========================================================
+   USERS PAGE — page-specific additions
+   (shared styles come from App.css design system)
+   ========================================================= */
+
+/* "You" tag next to the current user's name.
+   Higher specificity than the shared `.user-cell span` rule. */
+.user-cell .users-self-tag {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  margin-top: 4px;
+  margin-left: 0;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Activate / deactivate toggle buttons */
+.icon-button.toggle {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+.icon-button.toggle:hover {
+  background: #d1fae5;
+}
+
+.icon-button.toggle-off {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.icon-button.toggle-off:hover {
+  background: #fee2e2;
+}
+
+/* Form padding inside the user modal */
+.user-modal form {
+  padding: 20px;
+}

@@ -1,0 +1,337 @@
+/* =========================================================
+   JOB CARDS PAGE — page-specific additions
+   (shared styles come from App.css design system)
+   ========================================================= */
+
+/* Summary strip */
+.job-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-bottom: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.job-summary-strip div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 16px;
+}
+
+.job-summary-strip div + div {
+  border-left: 1px solid var(--border-light);
+}
+
+.job-summary-strip strong {
+  color: var(--text-primary);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.job-summary-strip span {
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .data-table tbody tr.over-estimate td {
+    border-left: 0;
+  }
+
+  .data-table tbody tr.over-estimate {
+    box-shadow: inset 3px 0 0 var(--warning), var(--shadow-sm);
+  }
+}
+
+@media (max-width: 700px) {
+  .job-summary-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .job-summary-strip div:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid var(--border-light);
+  }
+
+  .job-summary-strip div:nth-child(4) {
+    border-top: 1px solid var(--border-light);
+  }
+}
+
+@media (max-width: 480px) {
+  .job-summary-strip div {
+    gap: 4px;
+    padding: 13px 10px;
+  }
+
+  .job-summary-strip strong {
+    font-size: 19px;
+  }
+
+  .job-summary-strip span {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+
+  .status-action {
+    min-height: 36px;
+    padding: 0 12px;
+  }
+
+  .service-item {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .service-item > div {
+    gap: 9px;
+  }
+
+  .service-input-row input,
+  .service-input-row select {
+    height: 44px;
+    font-size: 16px;
+  }
+
+  .remove-service {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+/* Complaint cell */
+.complaint-cell {
+  max-width: 220px;
+  overflow: hidden;
+  color: var(--text-secondary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Over-estimate row highlight */
+.data-table tbody tr.over-estimate td {
+  border-left: 4px solid var(--warning);
+}
+
+/* Status action buttons (Start / Complete / Cancel) */
+.status-action {
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid #dbe2ea;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.status-action:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.status-action.complete {
+  background: var(--success-light);
+  border-color: #bbf7d0;
+  color: #059669;
+}
+
+.status-action.cancel {
+  background: #fff1f2;
+  border-color: #fecaca;
+  color: var(--danger);
+}
+
+/* Wide job card modal */
+.job-modal {
+  max-width: 700px;
+}
+
+/* Modal form sections */
+.job-form-section {
+  margin-bottom: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-light);
+}
+
+.job-form-section:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.job-form-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 14px;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.job-form-section h3::before {
+  content: "";
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--primary);
+}
+
+/* Services / parts inline input row */
+.service-input-row {
+  display: grid;
+  grid-template-columns: 1fr 110px auto;
+  gap: 9px;
+}
+
+.service-input-row input,
+.service-input-row select {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 11px;
+  border: 1px solid #dbe2ea;
+  border-radius: var(--radius-md);
+  outline: none;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 12px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.service-input-row input:focus,
+.service-input-row select:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+@media (max-width: 700px) {
+  .service-input-row {
+    grid-template-columns: 1fr;
+  }
+
+  .service-input-row .secondary-button {
+    width: 100%;
+  }
+}
+
+.service-list {
+  margin-top: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #f8fafc;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 11px 13px;
+  border-bottom: 1px solid var(--border);
+}
+
+.service-item > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 15px;
+}
+
+.service-item strong {
+  color: var(--text-primary);
+  font-size: 12px;
+}
+
+.service-item span {
+  color: var(--text-secondary);
+  font-size: 11px;
+}
+
+.remove-service {
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid #fee2e2;
+  border-radius: 7px;
+  background: #fef2f2;
+  color: var(--danger);
+  cursor: pointer;
+}
+
+.remove-service:hover {
+  background: #fee2e2;
+}
+
+.service-total {
+  padding: 11px 13px;
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Cost summary */
+.job-cost-summary {
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.job-cost-summary > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.job-cost-summary > div:last-child {
+  border-bottom: 0;
+}
+
+.job-cost-summary span {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.job-cost-summary strong {
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.job-cost-summary .job-cost-grand {
+  background: var(--surface);
+}
+
+.job-cost-summary .job-cost-grand span {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.job-cost-summary .job-cost-grand strong {
+  color: var(--primary);
+  font-size: 17px;
+  font-weight: 800;
+}

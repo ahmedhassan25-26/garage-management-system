@@ -1,0 +1,75 @@
+/* =========================================================
+   PAYMENTS PAGE — page-specific additions
+   (shared styles come from App.css design system)
+   ========================================================= */
+
+/* Payment form layout */
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Inline invoice summary box */
+.payment-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #f8fafc;
+  font-size: 13px;
+}
+
+.payment-summary div {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-secondary);
+}
+
+.payment-summary strong {
+  color: var(--text-primary);
+}
+
+/* Inline validation error under amount */
+.payment-error {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 5px;
+  color: #b91c1c;
+  font-size: 12px;
+}
+
+/* Payment method badges */
+.method-badge {
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.method-badge.cash {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.method-badge.card {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.method-badge.bank {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.method-badge.mobile {
+  background: #fef3c7;
+  color: #92400e;
+}
